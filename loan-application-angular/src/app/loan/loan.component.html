@@ -1,0 +1,47 @@
+
+<div class="container">
+
+    <fieldset>
+        <label>Customer Id</label>
+        <input type="text" [(ngModel)]="loan.customerId" class="form-control" name="customerId" required="required">
+    </fieldset>
+
+    <fieldset>
+        <label>Loan Amount</label>
+        <input type="text" [(ngModel)]="loan.loanAmount" class="form-control" name="loanAmount" required="required">
+    </fieldset>
+
+    <fieldset>
+        <label>Interest Rate</label>
+        <input type="text" [(ngModel)]="loan.interestRate" class="form-control" name="interestRate" required="required">
+    </fieldset>
+    
+
+    <fieldset>
+        <label>Payment Frequency</label>
+        <input type="text" [(ngModel)]="loan.paymentFrequency" class="form-control" name="paymentFrequency" required="required">
+    </fieldset>
+
+    <fieldset>
+        <label>Payment Term</label>
+        <input type="text" [(ngModel)]="loan.paymentTerm" class="form-control" name="paymentTerm" required="required">
+    </fieldset>
+
+    <fieldset>
+        <label>Trade date</label>
+<input type="date" [(ngModel)]="loan.tradeDate" class="form-control" name="tradeDate" required="required">
+</fieldset>
+
+<fieldset>
+    <label>Loan Start date</label>
+<input type="date" [(ngModel)]="loan.loanStartDate" class="form-control" name="loanStartDate" required="required">
+</fieldset>
+
+<fieldset>
+    <label>Maturity date</label>
+<input type="date" [(ngModel)]="loan.maturityDate" class="form-control" name="maturityDate" required="required">
+</fieldset>
+
+<button class="btn btn-success" (click)="save()">Confirm</button>
+
+</div>

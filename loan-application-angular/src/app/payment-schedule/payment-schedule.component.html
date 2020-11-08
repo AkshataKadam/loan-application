@@ -1,0 +1,31 @@
+<h3 style="margin-top:auto; text-align: center; color:steelblue;">Schedules</h3>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Payment date</th>
+            <th>Principal Amount</th>
+            <th>Projected Interest</th>
+            <th>Payment Status</th>
+            <th>Payment Amount</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let loan of loanSchedule.schedule'>
+            <td>{{loan.paymentDate | date}}</td>
+        <td>{{loan.principal | currency:"₹"}}</td>
+        <td>{{loan.projectedInterest | currency:"₹"}}</td>
+        <td>{{loan.paymentStatus}} </td>
+        <td>{{loan.paymentAmount | currency:"₹"}}</td>
+
+           <!-- <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
+            <td><button (click)="viewTodo(todo.id)" class="btn btn-info">View Payment Schedule</button></td>
+            <td><button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button></td>-->
+        </tr>
+    </tbody>
+</table>
+
+<!--<label ><button (click)="addTodo()" class="btn btn-success">Apply For New Loan</button></label>-->
+
+

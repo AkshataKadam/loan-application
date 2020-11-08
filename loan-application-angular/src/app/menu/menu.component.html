@@ -1,0 +1,14 @@
+<h1 style="margin-top:auto; text-align: center; color:steelblue;">Loan Application Portal</h1>
+    
+    <nav >
+       
+        <button *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/loans" class="btn btn-info">Applied Loans</button>
+        <ul class="navbar-nav "  style="background-color: steelblue;" >
+           <!-- <li><a *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/welcome/aaa" class="nav-link">Home</a></li>-->
+           <!--  <li><a  *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/loans" class="button">Applied Loans</a></li>
+        
+            <li class="r"><a *ngIf='!HardCodedAuthService.isLogedIn()' routerLink="/login" class="nav-link">Login</a></li>
+           <li class="r"><a *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/logout" class="nav-link">Logout</a></li>-->
+        </ul>
+
+    </nav>

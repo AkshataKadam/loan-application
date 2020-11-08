@@ -1,0 +1,15 @@
+<div> 
+    Welcome {{name}}
+</div>
+<div>
+    <a routerLink="/todos">TODOS</a>
+</div>
+<div class="container"> 
+    Click here
+    <button (click)="getMessage()" class="btn btn-success">Get Welcome Message</button>
+</div>
+
+<div class="container" *ngIf="serviceMessage"> 
+    <h2>Customized Message</h2>
+    {{serviceMessage}}  
+</div>

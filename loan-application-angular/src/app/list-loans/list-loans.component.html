@@ -1,0 +1,40 @@
+
+    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Loan Amount</th>
+            <th>Interest Rate</th>
+            <th>Payment Frequency</th>
+            <th>Payment Term</th>
+            <th>Trade date</th>
+            <th>Loan Start date</th>
+            <th>Maturity date</th>
+            <th> </th>
+            <th>  </th>
+            <th> </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let loan of loans'>
+            <td>{{loan.customerId}}</td>
+            <td>{{loan.loanAmount | currency:"₹"}}</td>
+            <td>{{loan.interestRate}}</td>
+            <td>{{loan.paymentFrequency}}</td>
+            <td>{{loan.paymentTerm}}</td>
+            <td>{{loan.tradeDate | date}}</td>
+            <td>{{loan.loanStartDate | date}}</td>
+            <td>{{loan.maturityDate | date}}</td>
+
+           <!-- <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>-->
+            <td><button (click)="viewLoan(loan.id)" class="btn btn-info">View Payment Schedule</button></td>
+            <!--<td><button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button></td>-->
+        </tr>
+    </tbody>
+</table>
+
+<label ><button (click)="addLoan()" class="btn btn-success">Apply For New Loan</button></label>
+
+
