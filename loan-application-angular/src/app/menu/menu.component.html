@@ -1,14 +1,15 @@
-<h1 style="margin-top:auto; text-align: center; color:steelblue;">Loan Application Portal</h1>
-    
-    <nav >
-       
-        <button *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/loans" class="btn btn-info">Applied Loans</button>
-        <ul class="navbar-nav "  style="background-color: steelblue;" >
-           <!-- <li><a *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/welcome/aaa" class="nav-link">Home</a></li>-->
-           <!--  <li><a  *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/loans" class="button">Applied Loans</a></li>
-        
-            <li class="r"><a *ngIf='!HardCodedAuthService.isLogedIn()' routerLink="/login" class="nav-link">Login</a></li>
-           <li class="r"><a *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/logout" class="nav-link">Logout</a></li>-->
-        </ul>
 
-    </nav>
+
+ <img src = "../../assets/finzly_cropped.png"
+    alt = "Finzly Logo" height = "50" width = "150"  />  
+     
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">  
+            
+            <ul class="nav justify-content-end">               
+                
+                <li class="nav-item"><p style="margin-bottom: auto; margin-top:auto;position: relative; left: 10px; color:white;font-family:'Times New Roman', Times, serif; font-size:0.7cm;"><b> Loan Application Portal</b></p></li>
+                <li class="nav-item"><a style="margin-top:auto;position: relative; left: 900px; color:white;" class="nav-link" *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/loans">Applied Loans</a></li>
+                <li class="nav-item"><a style="color:white; position: relative; left: 900px; " class="nav-link" *ngIf='HardCodedAuthService.isLogedIn()' routerLink="/logout">Logout</a></li>
+            </ul>
+    
+        </nav>

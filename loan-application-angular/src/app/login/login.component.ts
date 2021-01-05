@@ -9,9 +9,9 @@ import { HardCodedAuthService } from '../service/hard-coded-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'aaa';
+  username = '';
   password = '';
-  err = 'Invalid';
+  err = '**Invalid Credentials';
   invalidLogin = false;
   constructor(private router: Router,
     private HardCodedAuthService: HardCodedAuthService) { }
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   loginHandle(): void{
     //console.log(this.username);
     if(this.HardCodedAuthService.auth(this.username,this.password)){
-      this.router.navigate(['loans',this.username]);
+      this.router.navigate(['loans']);
     this.invalidLogin=false;
     }
     else

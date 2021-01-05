@@ -1,5 +1,7 @@
+<h3 style="margin-top:0.5cm; margin-bottom: 0.5cm; text-align: center; font-family:'Times New Roman', Times, serif; color:#17A2B8;">
+    <b><i> <img src = "../../assets/logo.png" alt = "Finzly Logo" height = "30" width = "40"  />
+        Applied Loans</i></b></h3>
 
-    <div class="alert alert-success" *ngIf='message'>{{message}}</div>
     <table class="table">
     <thead>
         <tr>
@@ -18,7 +20,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let loan of loans'>
+        <tr *ngFor="let loan of loans | paginate: { id: 'listing_pagination',
+        itemsPerPage: 5,
+        currentPage: page,
+        totalItems: totalRecords }">
             <td>{{loan.customerId}}</td>
             <td>{{loan.loanAmount | currency:"₹"}}</td>
             <td>{{loan.interestRate}}</td>
@@ -35,6 +40,13 @@
     </tbody>
 </table>
 
-<label ><button (click)="addLoan()" class="btn btn-success">Apply For New Loan</button></label>
+<div class="container-fluid" style="position:relative; left: 35%;">
+    <pagination-controls  id="listing_pagination" maxSize="5"
+directionLinks="true"
+(pageChange)="page = $event"></pagination-controls>
+  </div>
 
+  <div class="container" style="position: absolute;">
+<button (click)="addLoan()" class="btn btn-success" style="width: 20%;">Apply For New Loan</button>
+</div>
 

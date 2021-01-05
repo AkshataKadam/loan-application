@@ -4,6 +4,9 @@ import { Loan } from 'src/app/model/business-models';
 import { LoanDataService } from '../service/data/loan-data.service';
 import { LoanSchedule } from 'src/app/model/business-models';
 
+import { Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-loan',
@@ -16,10 +19,13 @@ public loan: Loan = new Loan();
 schedule: LoanSchedule;
 message: string;
 
+formattedAmount: string;
+
   constructor(
     private loanService: LoanDataService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private currencyPipe : CurrencyPipe
   ) { }
 
   ngOnInit(): void {
@@ -60,4 +66,12 @@ message: string;
     }
   )
 }
+
+//loan amount formatting
+transformAmount(element){
+  this.formattedAmount = this.currencyPipe.transform(this.loan.loanAmount, '₹');
+
+  element.target.value = this.formattedAmount;
+}
+
 }

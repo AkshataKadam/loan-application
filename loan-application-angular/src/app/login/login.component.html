@@ -1,6 +1,30 @@
-<small *ngIf='invalidLogin'>{{err}}</small>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-User Name = <input type="text" name="username" [(ngModel)]="username">
-Password = <input type="password" name="password" [(ngModel)]="password">
+<div class="imgcontainer">
+<img src = "../../assets/login_cover.png"
+    alt = "Finzly Logo" class="center" />
+    <button onclick="window.location.href='#id1'" class="btn btn-info">Secure Login</button>
+     <br><br> 
+  </div>
 
-<button (click)=loginHandle() class="btn btn-success">Login</button>
+<div class="container" id="id1">
+      <div class="card">
+
+        <h5 style="margin-top:0.5cm; text-align: left; font-family:'Times New Roman', Times, serif; color:#17A2B8;">
+          <b><i> <img src = "../../assets/logo.png" alt = "Finzly Logo" height = "30" width = "40"  />
+              Welcome to the Login!</i></b></h5>
+        
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="username" required>
+  
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password" required>
+          
+        <label *ngIf='invalidLogin' style="color: red; font-size:small;"><i><b>{{err}}</b></i></label>
+
+        <button (click)=loginHandle() class="btn btn-info">Login</button> <br>
+      </div> 
+      <br><br>
+    </div>

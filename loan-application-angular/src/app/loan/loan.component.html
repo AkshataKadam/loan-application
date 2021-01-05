@@ -1,47 +1,76 @@
 
-<div class="container">
+<div class="container-fluid" style="padding: 0.5cm;padding-left: 8cm;padding-right: 8cm;">
+
+    <h3 style="margin-top:0.5cm;margin-bottom: 0.5cm; text-align: left;font-family:'Times New Roman', Times, serif; color:#17A2B8;">
+        <b><i> <img src = "../../assets/logo.png" alt = "Finzly Logo" height = "30" width = "40"  />
+            Apply for a New Loan</i></b></h3>
 
     <fieldset>
-        <label>Customer Id</label>
+        <h6>Customer Id</h6>
         <input type="text" [(ngModel)]="loan.customerId" class="form-control" name="customerId" required="required">
-    </fieldset>
-
-    <fieldset>
-        <label>Loan Amount</label>
-        <input type="text" [(ngModel)]="loan.loanAmount" class="form-control" name="loanAmount" required="required">
-    </fieldset>
-
-    <fieldset>
-        <label>Interest Rate</label>
-        <input type="text" [(ngModel)]="loan.interestRate" class="form-control" name="interestRate" required="required">
-    </fieldset>
-    
-
-    <fieldset>
-        <label>Payment Frequency</label>
-        <input type="text" [(ngModel)]="loan.paymentFrequency" class="form-control" name="paymentFrequency" required="required">
-    </fieldset>
-
-    <fieldset>
-        <label>Payment Term</label>
-        <input type="text" [(ngModel)]="loan.paymentTerm" class="form-control" name="paymentTerm" required="required">
-    </fieldset>
-
-    <fieldset>
-        <label>Trade date</label>
-<input type="date" [(ngModel)]="loan.tradeDate" class="form-control" name="tradeDate" required="required">
 </fieldset>
+<br>
+
+    <fieldset>
+        <h6>Loan Amount</h6>
+        <!--<input type="number" [(ngModel)]="loan.loanAmount" class="form-control" name="loanAmount" required="required">-->
+        <input type="text" (blur)="transformAmount($event)" [(ngModel)]="formattedAmount" [(ngModel)]="loan.loanAmount" class="form-control" required="required"/>
+</fieldset>
+<br>
+
+    <fieldset>
+        <h6>Interest Rate</h6>
+        <input type="number" [(ngModel)]="loan.interestRate" class="form-control" name="interestRate" required="required">
+</fieldset>
+<br>
+
+    <fieldset>
+        <h6>Payment Frequency</h6>
+        <div class="card-decks">
+        <input type="radio" [(ngModel)]="loan.paymentFrequency" id="monthly" name="monthly" value="Monthly">
+        <label for="monthly">Monthly</label>
+        <input type="radio" [(ngModel)]="loan.paymentFrequency" id="quarterly" name="quarterly" value="Quarterly">
+        <label for="quarterly">Quarterly</label>
+        <input type="radio" [(ngModel)]="loan.paymentFrequency" id="half-yearly" name="half-yearly" value="Half-Yearly">
+        <label for="half-yearly">Half-Yearly</label>
+        <input type="radio" [(ngModel)]="loan.paymentFrequency" id="yearly" name="yearly" value="Yearly">
+        <label for="yearly">Yearly</label>
+        <!--<input type="text" [(ngModel)]="loan.paymentFrequency" class="form-control" name="paymentFrequency" required="required">-->
+    </div>
+</fieldset>
+<br>
+
+    <fieldset for="paymentTerm">
+        <h6>Payment Term</h6>
+
+        <select name="paymentTerm" [(ngModel)]="loan.paymentTerm" class="form-control" required="required">
+        <option value="Projected Interest">Projected Interest</option>
+        <option value="Interest Only">Interest Only</option>
+        </select>
+        <!--<h6>Payment Term</h6>
+        <input type="text" [(ngModel)]="loan.paymentTerm" class="form-control" name="paymentTerm" required="required">-->
+    </fieldset>
+<br>
+
+<div class="card-columns">
+    <fieldset>
+        <h6>Trade date</h6>
+        <input type="date" [(ngModel)]="loan.tradeDate" class="form-control" name="tradeDate" required="required">
+</fieldset>
+<br>
 
 <fieldset>
-    <label>Loan Start date</label>
-<input type="date" [(ngModel)]="loan.loanStartDate" class="form-control" name="loanStartDate" required="required">
+    <h6>Loan Start date</h6>
+    <input type="date" [(ngModel)]="loan.loanStartDate" class="form-control" name="loanStartDate" required="required">
 </fieldset>
+<br>
 
 <fieldset>
-    <label>Maturity date</label>
-<input type="date" [(ngModel)]="loan.maturityDate" class="form-control" name="maturityDate" required="required">
+    <h6>Maturity date</h6>
+    <input type="date" [(ngModel)]="loan.maturityDate" class="form-control" name="maturityDate" required="required">
 </fieldset>
-
-<button class="btn btn-success" (click)="save()">Confirm</button>
+</div>
+<br>
+<button class="btn btn-info" (click)="save()" >Apply</button>
 
 </div>

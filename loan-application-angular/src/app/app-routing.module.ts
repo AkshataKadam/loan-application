@@ -10,6 +10,7 @@ import { LoanComponent } from './loan/loan.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
+  {path:'' , component: LoginComponent},
   {path:'login' , component: LoginComponent},
   {path:'welcome/:name' , component: WelcomeComponent , canActivate: [RouteGuardService]},
   {path:'loans' , component: ListLoansComponent , canActivate: [RouteGuardService]},

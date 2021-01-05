@@ -33,9 +33,7 @@ id:number
     refreshTodos(){
       this.loanService.retriveLoan(this.id).subscribe(
         response =>
-          this.loan=response
-          //this.schedule=response
-        
+          this.loan=response        
       )
     }
 

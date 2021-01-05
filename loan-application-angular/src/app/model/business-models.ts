@@ -9,7 +9,7 @@ export class LoanSchedule{
     public principal: number;
     public interest: number;
     public schedule:Schedule[];
-    public loan:Loan[];
+    public loann:Loan[];
     
   }
 

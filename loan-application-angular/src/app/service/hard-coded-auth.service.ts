@@ -8,7 +8,7 @@ export class HardCodedAuthService {
   constructor() { }
 
   auth(username,password){
-    if(username==='aaa' && password==='abc'){
+    if(username==='akshata' && password==='akkshata'){
       sessionStorage.setItem('authUser',username)
       console.log(this.isLogedIn)
       return true

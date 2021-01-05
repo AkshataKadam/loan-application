@@ -18,6 +18,9 @@ export class ListLoansComponent implements OnInit {
   schedule: Schedule
   id: number
   
+  totalRecords:number
+page:number =1
+  
   constructor(
     private loanService:LoanDataService,
     private router: Router,
@@ -28,11 +31,13 @@ export class ListLoansComponent implements OnInit {
     this.refreshLoans()
   }
 
+
   refreshLoans(){
     this.loanService.retriveAllLoans().subscribe(
       response =>{
         console.log(response)
         this.loans=response
+        this.totalRecords = response.length
       }
     )
   }

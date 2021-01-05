@@ -1,12 +1,14 @@
-<h3 style="margin-top:auto; text-align: center; color:steelblue;">Schedules</h3>
+<h3 style="margin-top:0.5cm;margin-bottom: 0.5cm; text-align: center;font-family:'Times New Roman', Times, serif; color: #17A2B8;"><b><i> <img src = "../../assets/logo.png"
+    alt = "Finzly Logo" height = "30" width = "40"  />Payment Schedule!!</i></b></h3>
     <table class="table">
     <thead>
         <tr>
             <th>Payment date</th>
             <th>Principal Amount</th>
             <th>Projected Interest</th>
-            <th>Payment Status</th>
             <th>Payment Amount</th>
+            <th>Payment Status</th>
+
             
             
         </tr>
@@ -16,16 +18,13 @@
             <td>{{loan.paymentDate | date}}</td>
         <td>{{loan.principal | currency:"₹"}}</td>
         <td>{{loan.projectedInterest | currency:"₹"}}</td>
-        <td>{{loan.paymentStatus}} </td>
         <td>{{loan.paymentAmount | currency:"₹"}}</td>
+        <td *ngIf='loan.paymentStatus == "Paid"' style="color: green;"><i>{{loan.paymentStatus}} </i></td>
+        <td *ngIf='loan.paymentStatus == "Projected"' style="color: red;"><i>{{loan.paymentStatus}} </i></td>
 
-           <!-- <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button></td>
-            <td><button (click)="viewTodo(todo.id)" class="btn btn-info">View Payment Schedule</button></td>
-            <td><button (click)="deleteTodo(todo.id)" class="btn btn-danger">Delete</button></td>-->
         </tr>
     </tbody>
 </table>
 
-<!--<label ><button (click)="addTodo()" class="btn btn-success">Apply For New Loan</button></label>-->
 
 
